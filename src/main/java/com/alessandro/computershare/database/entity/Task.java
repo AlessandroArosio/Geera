@@ -29,4 +29,7 @@ public class Task {
   @Column
   @Enumerated(EnumType.STRING)
   private TaskType taskType;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  private Developer developer;
 }

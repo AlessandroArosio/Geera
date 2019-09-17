@@ -5,6 +5,9 @@ import com.alessandro.computershare.database.dto.DeveloperDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class DeveloperServiceImpl implements DeveloperService {
 
@@ -28,7 +31,13 @@ public class DeveloperServiceImpl implements DeveloperService {
 
   @Override
   public DeveloperDTO findDevById(Integer id) {
-    return null;
+    var devFromDB = repository.findById(id);
+    return mapper.devToDTO(devFromDB.orElseThrow(RuntimeException::new));
+  }
+
+  @Override
+  public List<DeveloperDTO> getAllDevs() {
+    return repository.findAll().stream().map(mapper::devToDTO).collect(Collectors.toList());
   }
 
   @Override

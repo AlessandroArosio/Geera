@@ -29,6 +29,7 @@ public class Developer {
   // if we delete a developer, we don't want to delete the tasks as well
   @OneToMany(
       fetch = FetchType.LAZY,
+      mappedBy = "developer",
       cascade = {
           CascadeType.DETACH,
           CascadeType.MERGE,
