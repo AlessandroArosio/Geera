@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface TaskService {
 
-  TaskMapper mapper = TaskMapper.INSTANCE;
-
   TaskDTO saveTask(TaskDTO dto);
   TaskDTO updateTask(TaskDTO dto);
   TaskDTO findTaskById(Integer id);

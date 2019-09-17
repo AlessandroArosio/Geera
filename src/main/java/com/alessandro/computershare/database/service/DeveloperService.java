@@ -8,8 +8,6 @@ import java.util.List;
 public interface DeveloperService {
   // basic CRUD
 
-  DevMapper mapper = DevMapper.INSTANCE;
-
   DeveloperDTO saveDev(DeveloperDTO dto);
   DeveloperDTO updateDev(DeveloperDTO dto);
   DeveloperDTO findDevById(Integer id);

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,13 +29,13 @@ public class Developer {
 
   // if we delete a developer, we don't want to delete the tasks as well
   @OneToMany(
-      fetch = FetchType.LAZY,
+      fetch = FetchType.EAGER,
       mappedBy = "developer",
       cascade = {
           CascadeType.DETACH,
           CascadeType.MERGE,
           CascadeType.REFRESH,
           CascadeType.PERSIST})
-  private List<Task> taskList;
+  private List<Task> taskList = new ArrayList<>();
 
 }

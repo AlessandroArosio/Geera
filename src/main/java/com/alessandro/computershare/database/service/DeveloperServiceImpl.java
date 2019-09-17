@@ -2,6 +2,7 @@ package com.alessandro.computershare.database.service;
 
 import com.alessandro.computershare.database.dao.DeveloperRepository;
 import com.alessandro.computershare.database.dto.DeveloperDTO;
+import com.alessandro.computershare.database.dto.mapper.DevMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class DeveloperServiceImpl implements DeveloperService {
 
   @Autowired
   private DeveloperRepository repository;
+
+  @Autowired
+  private DevMapper mapper;
 
   @Override
   public DeveloperDTO saveDev(DeveloperDTO dto) {
@@ -42,6 +46,6 @@ public class DeveloperServiceImpl implements DeveloperService {
 
   @Override
   public void deleteDev(DeveloperDTO dto) {
-
+    repository.delete(mapper.dtoToDev(dto));
   }
 }
