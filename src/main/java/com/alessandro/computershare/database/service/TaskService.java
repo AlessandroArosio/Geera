@@ -1,7 +1,7 @@
 package com.alessandro.computershare.database.service;
 
 import com.alessandro.computershare.database.dto.TaskDTO;
-import com.alessandro.computershare.database.dto.mapper.TaskMapper;
+import com.alessandro.computershare.database.entity.Developer;
 
 import java.util.List;
 
@@ -11,6 +11,6 @@ public interface TaskService {
   TaskDTO updateTask(TaskDTO dto);
   TaskDTO findTaskById(Integer id);
   List<TaskDTO> getAllTasks();
-  List<TaskDTO> getTasksByDevId();
+  List<TaskDTO> getTasksByDeveloper(Developer id);
   void deleteTask(TaskDTO dto);
 }

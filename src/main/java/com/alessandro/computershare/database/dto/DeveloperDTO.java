@@ -12,4 +12,12 @@ public class DeveloperDTO {
   private String name;
   private String email;
   private List<TaskDTO> taskList;
+
+  public void addTask(TaskDTO task) {
+    this.taskList.add(task);
+  }
+
+  public void deleteTask(TaskDTO task) {
+    this.taskList.remove(task);
+  }
 }

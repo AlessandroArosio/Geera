@@ -38,4 +38,11 @@ public class Developer {
           CascadeType.PERSIST})
   private List<Task> taskList = new ArrayList<>();
 
+  public void addTask(Task task) {
+    this.taskList.add(task);
+  }
+
+  public void deleteTask(Task task) {
+    this.taskList.remove(task);
+  }
 }
