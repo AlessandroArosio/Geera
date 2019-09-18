@@ -7,6 +7,8 @@
     <bytecodeTargetLevel>
       <module name="computershare.main" target="12" />
       <module name="computershare.test" target="12" />
+      <module name="geera.main" target="12" />
+      <module name="geera.test" target="12" />
     </bytecodeTargetLevel>
   </component>
 </project>

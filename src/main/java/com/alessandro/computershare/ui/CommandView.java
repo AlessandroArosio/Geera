@@ -193,7 +193,7 @@ public class CommandView {
     }
   }
 
-  private void populateSomeData() {
+  protected void populateSomeData() {
     DeveloperDTO dev = new DeveloperDTO();
     dev.setName("Alessandro");
     dev.setEmail("alessandro@email.com");
