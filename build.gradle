@@ -34,3 +34,7 @@ compileJava {
     options.annotationProcessorPath = configurations.annotationProcessor
     options.compilerArgs << "-Amapstruct.defaultComponentModel=spring"
 }
+
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}

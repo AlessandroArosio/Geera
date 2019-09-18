@@ -1,27 +1,16 @@
 package com.alessandro.computershare;
 
-import com.alessandro.computershare.database.dto.DeveloperDTO;
-import com.alessandro.computershare.database.dto.TaskDTO;
-import com.alessandro.computershare.database.entity.support.TaskType;
-import com.alessandro.computershare.database.service.DeveloperService;
-import com.alessandro.computershare.database.service.TaskService;
 import com.alessandro.computershare.ui.CommandView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @SpringBootApplication
 public class Geera implements CommandLineRunner {
 
   @Autowired
-  private DeveloperService developerService;
-
-  @Autowired
-  private TaskService taskService;
+  CommandView application;
 
   public static void main(String[] args) {
     SpringApplication.run(Geera.class, args);
@@ -53,7 +42,6 @@ public class Geera implements CommandLineRunner {
 //    DeveloperDTO fromDB = developerService.findDevById(savedDev.getId());
 //    System.out.println("Email from guy fetched: " + fromDB.getEmail());
 
-    CommandView application = new CommandView();
     application.run();
 
   }

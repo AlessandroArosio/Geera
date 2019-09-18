@@ -11,6 +11,6 @@ public interface DeveloperService {
   DeveloperDTO updateDev(DeveloperDTO dto);
   DeveloperDTO findDevById(Integer id);
   List<DeveloperDTO> getAllDevs();
-  void deleteDev(DeveloperDTO dto);
+  void deleteDevById(Integer devId);
 
 }

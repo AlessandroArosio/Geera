@@ -45,7 +45,7 @@ public class DeveloperServiceImpl implements DeveloperService {
   }
 
   @Override
-  public void deleteDev(DeveloperDTO dto) {
-    repository.delete(mapper.dtoToDev(dto));
+  public void deleteDevById(Integer id) {
+    repository.deleteById(id);
   }
 }
