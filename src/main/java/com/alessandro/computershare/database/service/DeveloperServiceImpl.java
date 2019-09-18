@@ -28,9 +28,13 @@ public class DeveloperServiceImpl implements DeveloperService {
   @Override
   public DeveloperDTO updateDev(DeveloperDTO dto) {
     // seems identical to the one above, but hibernate is smarter (than me)
-    var developer = mapper.dtoToDev(dto);
-    var persistedDev = repository.save(developer);
-    return mapper.devToDTO(persistedDev);
+    if (repository.findById(dto.getId()).isPresent()) {
+      var developer = mapper.dtoToDev(dto);
+      var persistedDev = repository.save(developer);
+      return mapper.devToDTO(persistedDev);
+    } else {
+      throw new RuntimeException();
+    }
   }
 
   @Override

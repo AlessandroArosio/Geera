@@ -18,8 +18,7 @@ public class DaoLoggingAspect {
   @Before("com.alessandro.computershare.aspect.AopExpressions.servicesAndDaoLogger()")
   public void daoLogger(JoinPoint joinPoint) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-    var args = joinPoint.getArgs();
-    logger.debug("AOP - Method invoked {}, with args {}", signature.toShortString(), args);
+    logger.debug("AOP - Method invoked {}", signature.toShortString());
   }
 
   @AfterThrowing(

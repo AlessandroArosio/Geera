@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "task")
 public class Task {
 
   @Id
@@ -30,6 +31,7 @@ public class Task {
   @Enumerated(EnumType.STRING)
   private TaskType taskType;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
+  @JoinColumn(name = "developer_id")
   private Developer developer;
 }

@@ -11,4 +11,5 @@ public class TaskDTO {
   private Integer priority;
   private String description;
   private TaskType taskType;
+  private DeveloperDTO developer;
 }

@@ -1,7 +1,9 @@
 package com.alessandro.computershare.database.service;
 
 import com.alessandro.computershare.database.dao.TaskRepository;
+import com.alessandro.computershare.database.dto.DeveloperDTO;
 import com.alessandro.computershare.database.dto.TaskDTO;
+import com.alessandro.computershare.database.dto.mapper.DevMapper;
 import com.alessandro.computershare.database.dto.mapper.TaskMapper;
 import com.alessandro.computershare.database.entity.Developer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +47,8 @@ public class TaskServiceImpl implements TaskService {
   }
 
   @Override
-  public List<TaskDTO> getTasksByDeveloper(Developer id) {
-    return repository.findAllByDeveloper(id).stream().map(mapper::taskToDTO).collect(Collectors.toList());
+  public List<TaskDTO> getTasksByDeveloper(DeveloperDTO dto) {
+    return repository.findAllByDeveloper(dto).stream().map(mapper::taskToDTO).collect(Collectors.toList());
   }
 
   @Override

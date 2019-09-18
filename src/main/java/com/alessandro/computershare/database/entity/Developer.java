@@ -14,6 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "developer")
 public class Developer {
 
   @Id
@@ -30,19 +31,21 @@ public class Developer {
   // if we delete a developer, we don't want to delete the tasks as well
   @OneToMany(
       fetch = FetchType.EAGER,
-      mappedBy = "developer",
       cascade = {
           CascadeType.DETACH,
           CascadeType.MERGE,
           CascadeType.REFRESH,
           CascadeType.PERSIST})
+  @JoinColumn(name = "task_id")
   private List<Task> taskList = new ArrayList<>();
 
   public void addTask(Task task) {
     this.taskList.add(task);
+    task.setDeveloper(this);
   }
 
   public void deleteTask(Task task) {
+    task.setDeveloper(null);
     this.taskList.remove(task);
   }
 }
