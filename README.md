@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/AlessandroArosio/Geera.svg?style=svg)](https://circleci.com/gh/AlessandroArosio/Geera)
+
 Using "Geera" is straight forward. After running the main method in the IDE (or java -jar path/file.jar),
 a help menu will appear with instructions from 1 to 8. To view the help menu again press 9.
 

@@ -1,1 +1,0 @@
-[![CircleCI](https://circleci.com/gh/AlessandroArosio/Geera.svg?style=svg)](https://circleci.com/gh/AlessandroArosio/Geera)
